@@ -2,7 +2,12 @@
   goon-component works!
 </p>
 <label>
-  Inital ref :
-  <input type="text" [formControl]="REFval">
-  Value: {{ REFval.value }}
+  Inital REF :
+  <input type="text" (keyup)="addbits(REFval.value)" [formControl]="REFval">
 </label>
+<label>
+  1d10 ROLL :
+  <input type="text" (keyup)="addbits(d10Roll.value)" [formControl]="d10Roll">
+</label>
+
+Total REF for Goon is : {{ totalREFval }}

@@ -11,7 +11,10 @@ import { Goon } from '../classes/goon';
 export class GoonComponentComponent implements OnInit {
   @Input() goon: Goon;
   REFval = new FormControl('');
-  //@Input('master') masterName: string;
+  d10Roll = new FormControl('');
+  totalREFval : number = 0;
+
+
   constructor() { }
 
   ngOnInit() {
@@ -19,11 +22,12 @@ export class GoonComponentComponent implements OnInit {
   }
 
   addbits(s){
+    console.log(s);
     var total= 0, s= s.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];
     while(s.length){
         total+= parseFloat(s.shift());
     }
-    return total;
+    this.totalREFval = total;
   }
 
 
