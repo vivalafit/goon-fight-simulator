@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Goon } from './classes/goon';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,4 +14,5 @@ export class AppComponent {
   addGoon() {
        this.goons.push(new Goon());
   }
+
 }
