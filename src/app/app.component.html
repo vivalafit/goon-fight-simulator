@@ -13,13 +13,23 @@
       <div class="goons-container">
         <button type="button" class="btn btn-dark" (click)="addGoon()">Add goons here</button>
         <div class="goons">
-              <app-goon-component *ngFor="let goon of goons; let i = index" [goon]="goon" [goonIndex]="i" (exportGoon)="getExportedGoon($event)"></app-goon-component>
+              <app-goon-component *ngFor="let goon of goons; let i = index"
+              [goon]="goon"
+              [goonIndex]="i"
+              (exportGoon)="getExportedGoon($event)"
+              (killGoon)="removeGoonFromList($event,true)"
+              ></app-goon-component>
         </div>
       </div>
       <div class="my-boys-container">
         <button type="button" class="btn btn-dark" (click)="addBois()">Add your bois here</button>
         <div class="bois">
-              <app-goon-component *ngFor="let boi of yourBoys; let i = index" [goon]="boi" [goonIndex]="i" (exportGoon)="getExportedBoi($event)"></app-goon-component>
+              <app-goon-component *ngFor="let boi of yourBoys; let i = index"
+              [goon]="boi"
+              [goonIndex]="i"
+              (exportGoon)="getExportedBoi($event)"
+              (killGoon)="removeGoonFromList($event,false)"
+              ></app-goon-component>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ button.btn.btn-dark {
   margin-left: 15px;
   margin-right: 15px;
   padding-bottom: 1px;
-  width: -webkit-fill-available;
+  width: stretch;
 }
 
 .header-summary {
