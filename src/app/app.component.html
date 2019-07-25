@@ -1,25 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
 <app-top-bar></app-top-bar>
 
 <div class="app d-flex justify-content-center">
   <div class="col-md-10">
-    <div class="goons-container">
-      <button type="button" class="btn btn-primary" (click)="addGoon()">Add goon</button>
-      <div class="goons">
-            <app-goon-component *ngFor="let goon of goons" [goon]="goon"></app-goon-component>
+    <div class="header-summary">
+      <div class="text">Well, well, who is going to kill or get killed first? Lets see :</div>
+      <div class="initiative-guys-list d-flex justify-content-center">
+        <div class="initiative-item" *ngFor="let guy of allGuys; let i = index"> {{guy.name}} ({{guy.totalREFval}}) -></div>
       </div>
     </div>
-    <div class="my-boys-container">
-      <button type="button" class="btn btn-primary" (click)="addGoon()">Add bois</button>
-      <div class="goons">
-            <app-goon-component *ngFor="let goon of goons" [goon]="goon"></app-goon-component>
+    <div class="humans">
+      <div class="goons-container">
+        <button type="button" class="btn btn-dark" (click)="addGoon()">Add goons here</button>
+        <div class="goons">
+              <app-goon-component *ngFor="let goon of goons; let i = index" [goon]="goon" [goonIndex]="i" (exportGoon)="getExportedGoon($event)"></app-goon-component>
+        </div>
+      </div>
+      <div class="my-boys-container">
+        <button type="button" class="btn btn-dark" (click)="addBois()">Add your bois here</button>
+        <div class="bois">
+              <app-goon-component *ngFor="let boi of yourBoys; let i = index" [goon]="boi" [goonIndex]="i" (exportGoon)="getExportedBoi($event)"></app-goon-component>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<!--
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->

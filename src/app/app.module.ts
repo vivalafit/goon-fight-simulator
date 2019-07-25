@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { GoonComponentComponent } from './goon-component/goon-component.component';
 
 
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { GoonComponentComponent } from './goon-component/goon-component.component';
 
 
 @NgModule({
@@ -12,9 +13,12 @@ import { GoonComponentComponent } from './goon-component/goon-component.componen
     AppComponent,
     TopBarComponent,
     GoonComponentComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

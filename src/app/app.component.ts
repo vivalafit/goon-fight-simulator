@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Goon } from './classes/goon';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,8 +10,30 @@ import { Goon } from './classes/goon';
 export class AppComponent {
   title = 'app';
   goons: Array<Goon> = [];
+  yourBoys: Array<Goon> = [];
+  allGuys: Array<Goon> = [];
 
   addGoon() {
        this.goons.push(new Goon());
   }
+  addBois(){
+    this.yourBoys.push(new Goon());
+  }
+  getExportedGoon(exportedGoon : Goon){
+    this.goons[exportedGoon.goonIndex] = exportedGoon;
+    this.allGuys =  this.goons.concat(this.yourBoys);
+    this.sortBoysREFS();
+  }
+
+  getExportedBoi(getExportedBoi : Goon){
+    this.yourBoys[getExportedBoi.goonIndex] = getExportedBoi;
+    this.allGuys =  this.goons.concat(this.yourBoys);
+    this.sortBoysREFS();
+  }
+
+  sortBoysREFS (){
+    this.allGuys.sort((a, b) => a.totalREFval - b.totalREFval).reverse();
+    console.log('Sorted Array is : ',this.allGuys);
+  }
+
 }
