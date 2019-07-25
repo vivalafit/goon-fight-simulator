@@ -1,13 +1,31 @@
-<p>
-  goon-component works!
-</p>
-<label>
-  Inital REF :
-  <input type="text" (keyup)="addbits(REFval.value)" [formControl]="REFval">
-</label>
-<label>
-  1d10 ROLL :
-  <input type="text" (keyup)="addbits(d10Roll.value)" [formControl]="d10Roll">
-</label>
+<div class="goon-container">
+  <div class="stat-input">
+    <label>
+      Name :
+      <input type="text" (keyup)="countTotalInitiative()" [formControl]="name">
+    </label>
+  </div>
+  <div class="inputs-container">
+    <div class="stat-input">
+      <label>
+        Inital REF :
+        <input type="text" (keyup)="countTotalInitiative()" [formControl]="REFval">
+      </label>
+    </div>
+    <div class="stat-input">
+      <label>
+        1d10 ROLL :
+        <input type="text" (keyup)="countTotalInitiative()" [formControl]="d10Roll">
+      </label>
+    </div>
+    <div class="stat-input">
+      <label>
+        Buffs/Debufs :
+        <input type="text" (keyup)="countTotalInitiative()" [formControl]="AdditionalREF">
+      </label>
+    </div>
+  </div>
 
-Total REF for Goon is : {{ totalREFval }}
+
+  Total REF for {{name.value}} is : <b>{{ totalREFval }}</b>
+</div>
