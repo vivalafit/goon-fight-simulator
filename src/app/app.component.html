@@ -12,7 +12,7 @@
     <div class="humans">
       <div class="goons-container">
         <button type="button" class="btn btn-dark" (click)="addGoon()">Add goons here</button>
-        <div class="goons">
+        <div class="goons d-flex justify-content-center">
               <app-goon-component *ngFor="let goon of goons; let i = index"
               [goon]="goon"
               [goonIndex]="i"
@@ -23,7 +23,7 @@
       </div>
       <div class="my-boys-container">
         <button type="button" class="btn btn-dark" (click)="addBois()">Add your bois here</button>
-        <div class="bois">
+        <div class="bois d-flex justify-content-center">
               <app-goon-component *ngFor="let boi of yourBoys; let i = index"
               [goon]="boi"
               [goonIndex]="i"

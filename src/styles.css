@@ -6,3 +6,7 @@ html, body {
 h2{
   margin-bottom: 0 !important;
 }
+
+input[type="text"] {
+    text-align: center !important;
+}
