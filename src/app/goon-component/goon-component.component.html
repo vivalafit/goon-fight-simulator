@@ -24,8 +24,9 @@
         <input type="text" (keyup)="countTotalInitiative()" [formControl]="AdditionalREF">
       </label>
     </div>
+    <button type="button" class="btn btn-danger" (click)="removeGoon()">Kill Command</button>
   </div>
-
-
-  Total REF for {{name.value}} is : <b>{{ totalREFval }}</b>
+  <div class="ref-summary">
+      Total REF for {{name.value}} is : <b>{{ totalREFval }}</b>
+  </div>
 </div>

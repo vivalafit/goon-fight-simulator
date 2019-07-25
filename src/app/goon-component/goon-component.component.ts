@@ -17,7 +17,7 @@ export class GoonComponentComponent implements OnInit {
   AdditionalREF = new FormControl('');
   totalREFval : number = 0;
   @Output() exportGoon = new EventEmitter<Goon>();
-
+  @Output() killGoon = new EventEmitter<Goon>();
 
   constructor() { }
 
@@ -40,6 +40,10 @@ export class GoonComponentComponent implements OnInit {
     this.goon.name = this.name.value;
     this.goon.totalREFval = this.totalREFval;
     this.exportGoon.emit(this.goon);
+  }
+
+  removeGoon(){
+    this.killGoon.emit(this.goon);
   }
 
 

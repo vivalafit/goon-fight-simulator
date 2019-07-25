@@ -36,4 +36,19 @@ export class AppComponent {
     console.log('Sorted Array is : ',this.allGuys);
   }
 
+  removeGoonFromList(goonToErase : Goon,isGoon : Boolean){
+    if(isGoon){
+      this.goons = this.goons.filter(function( goon ) {
+      return goon.name !== goonToErase.name;
+      });
+    } else {
+      this.yourBoys = this.yourBoys.filter(function( goon ) {
+      return goon.name !== goonToErase.name;
+      });
+    }
+    this.allGuys = this.allGuys.filter(function( goon ) {
+    return goon.name !== goonToErase.name;
+    });
+  }
+
 }
